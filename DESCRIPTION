@@ -1,0 +1,14 @@
+Package: Panther
+Type: Package
+Title: PANTHER annotation
+Version: 0.1.0
+Author: Michele Molina e Rafaella Ferraz
+Maintainer: Rafaella Ferraz <rafaellaferraz.16@hotmail.com>
+Description: This package suport PANTHER services (utilities to make correlations on large data sets as well as access to extensive genome lists with annotations by expert curators).
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.1
+Imports: 
+    jsonlite,
+    stringr
