@@ -1,4 +1,5 @@
 #' Information about annotation data sets supported by PANTHER
+#'
 #' @author Michele Molina e Rafaella Ferraz
 #' @export
 #'

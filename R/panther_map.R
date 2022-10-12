@@ -1,11 +1,10 @@
 #' Mapping
 #'
-#' @description Given a list of genes and a species, this service will return the list of genes that are mapped in PANTHER and also return any gene ontology annotations, PANTHER protein class annotations and Reactome annotations.
-#' @description  Maps user specified list of genes to PANTHER's genes for a specified organism with annotation information
+#' @description  Maps a list of genes for a specified organism and return gene ontology, PANTHER protein class annotation and Reactome pathways.
 #'
 #' @author Michele Molina e Rafaella Ferraz
 #'
-#' @param genes  Genes identifier. Maximum of 1000 Identifiers can be any of the following: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession andUniProt id
+#' @param genes  Genes identifier. Maximum of 1000 Identifiers. Examples: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession and UniProt id.
 #' @param organism Taxon id. Ex.: 9606
 #'
 #' @return Return a dataframe
@@ -15,7 +14,6 @@
 #' @return panther_id: Annotation id from PANTHER
 #' @return panther_label: Annotation label from PANTHER
 #' @return gene_acession: Id of the gene from HGNC and UniProtKB
-#' @return genes_symbol: Genes symbol
 #'
 #' @export
 #'
