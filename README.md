@@ -5,15 +5,30 @@ This package suport PANTHER (Protein ANalysis THrough Evolutionary Relationships
 
 More information in http://pantherdb.org
 
+## **Install**
 
+To install the Panther package, follow the following steps:
+
+1)	Change to working directory
+```
+cd analysis
+```
+3)	Clone the repository
+```
+git clone https://github.com/RafaellaFerraz/Panther.git 
+```
+5)	Install using install.package
+```
+install.packages("~/analysis/Panther/", repos = NULL, type="source")
+```
 
 ## **Data mapping**
 
-Given a list of genes and a species, this service return the gene ontology annotations, PANTHER protein class annotations and Reactome annotations.
+Given a list of genes and a species, this service return the gene ontology annotations, PANTHER protein class annotations and Reactome pathways.
 
 **Parameters:** 
 
-**genes:**  Genes identifier. Maximum of 1000 Identifiers can be any of the following: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession and UniProt id. \
+**genes:**  Genes identifier. Maximum of 1000 Identifiers. Examples: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession and UniProt id. \
 **organism:** Taxon id. Ex.: 9606
 
 ```
@@ -31,17 +46,17 @@ data <- panther_map(genes = c("BRCA1", "VDR", "HBB"), organism = "9696")
 
 ## **Overrepresentation test**
 
-Overrepresentation function compares a gene list to a reference gene list, and determines whether a particular class (e.g. molecular function, biological process, cellular component, PANTHER protein class, the PANTHER pathway or Reactome pathway) of genes is overrepresented or underrepresented.
+Overrepresentation function compares a gene list with a reference gene list, and determines whether a particular class (e.g. molecular function, biological process, cellular component) is overrepresented or underrepresented in input list.
 
 **Parameters:** 
 
-**genes:**  Genes identifier. Maximum of 1000 Identifiers can be any of the following: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession andUniProt id \
+**genes:**  Genes identifier. Maximum of 1000 Identifiers. Examples: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession andUniProt id \
 **organism:** One taxon id required. Ex.: 9606 \
-**ref_list:** If not specified, the system will use all the genes for the specified organism. Each identifier to be delimited by comma i.e. ','. Maximum of 100000 Identifiers can be any of the following: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession andUniProt id \
-**refOrganism:** This parameter is only required, if parameter 'refInputList' has been specified. Only one taxon id can be specified. Retrieve the list of supported genomes and corresponding taxon ids from the 'supportedgenomes' service. \
-**annotDataSet:** One of the supported PANTHER annotation data types. Use the 'supportedannotdatasets' service to retrieve list of supported annotation data types. Ex: GO:0003674 \
-**testtype:** Fisher's Exact test will be used by default. Options - "FISHER" and "BINOMIAL" \
-**correction:** correction of enrichment. Options - "FDR", "BONFERRONI" and "NONE" \
+**ref_list:** If not specified, the system will use all the genes for the specified organism. Each identifier to be delimited by comma i.e. ','. Maximum of 100000 Identifiers. Examples: Ensemble gene identifier, Ensemble protein identifier, Ensemble transcript identifier, Entrez gene id, gene symbol, NCBI GI, HGNC Id, International protein index id, NCBI UniGene id, UniProt accession andUniProt id \
+**refOrganism:** This parameter is only required if parameter 'ref_list' has been specified. Only one taxon id can be specified. \
+**annotDataSet:** One of the supported PANTHER annotation data types. Use the 'support_annot' function to retrieve list of supported annotation data types. Ex: GO:0003674 \
+**testtype:** Fisher's Exact test will be used by default. Options: "FISHER" and "BINOMIAL" \
+**correction:** correction of enrichment. Options: "FDR", "BONFERRONI" and "NONE" \
 
 
 ```
