@@ -61,9 +61,9 @@ data <- panther_over(genes = c("BRCA1", "VDR", "HBB"), annotDataSet = "GO:000367
 **plus_minus**
 
 
-## **Supported genomes**
+## **Supported datasets**
 
-Retrieve the list of supported organisms
+Retrieve the list of supported annotation data sets by PANTHER
 
 
 ```
